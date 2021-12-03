@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 
 class Client(models.Model):
     name = models.CharField(max_length=30)
@@ -8,8 +7,6 @@ class Client(models.Model):
     birthday = models.DateField()
 
 
-class Account(models.Model):
-    agency = models.IntegerField()
-    account = models.IntegerField()
+class Transaction(models.Model):
     balance = models.FloatField()
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
